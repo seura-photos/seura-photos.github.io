@@ -39,4 +39,6 @@ For me, "right" meant following current best practices for building software wit
 
 Since this is a showcase as much as a project, I want to be clear about how it's being made. I'm doing the work in conversation with Claude. I decide what Seura is, what it does, and how it should feel. Claude drafts specifications, researches libraries and licenses, proposes designs, and (later) writes much of the code. I review everything, push back, and correct it when it's wrong, which happens. When something in these posts was Claude's suggestion rather than mine, I'll say so.
 
+That includes the posts themselves. Claude writes most of them, in my voice, from our working sessions and the project's records. I review and edit every one for accuracy before it's published.
+
 Next: [writing the specs before the code](/devlog/02-specs-before-code/).

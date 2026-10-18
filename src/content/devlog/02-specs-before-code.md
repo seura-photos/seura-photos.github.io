@@ -27,7 +27,7 @@ Claude drafted the brief from a list of questions, and my answers shaped it:
 - **Where data lives:** edit files sit visibly beside each photo, in a documented format. Settings go in `Documents/Seura Photos`. Nothing hides in AppData or other hidden folders, and there's a cleanup function for removing everything Seura has written.
 - **Editing:** the basics. Crop, rotate, straighten, color and tint, exposure and contrast, a few classic effects like vignette and sepia, and red-eye.
 - **Organizing:** tags with subtags, the way my bookmark manager works.
-- **Cost:** free and open source. No subscriptions, ever.
+- **Cost:** free and open source. No one will ever have to pay to use it or create an account. (If I ever offer a paid service, it will only be for features that cost me money to run, like hosted AI; the details are in the [pricing promise](/#promise-title).)
 
 ## Tags, settled precisely
 

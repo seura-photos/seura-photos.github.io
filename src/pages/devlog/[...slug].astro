@@ -20,6 +20,9 @@ const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC
     <h1>{post.data.title}</h1>
     <p class="standfirst">{post.data.description}</p>
     <Content />
+    <aside class="authorship" aria-label="How this post was written">
+      <p>Claude wrote this post from our working sessions and the project's records. I reviewed and edited it for accuracy before publishing. <span class="sig">— Nevada</span></p>
+    </aside>
     <nav class="pager" aria-label="More posts">
       {older ? <a href={`/devlog/${older.id}/`} rel="prev"><span class="meta">Previous · Part {older.data.part}</span>{older.data.title}</a> : <span></span>}
       {newer ? <a href={`/devlog/${newer.id}/`} rel="next" class="next"><span class="meta">Next · Part {newer.data.part}</span>{newer.data.title}</a> : <span></span>}
@@ -27,6 +30,9 @@ const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC
   </article>
 </Base>
 <style>
+  .authorship { margin-top: 3rem; padding: 1rem 1.25rem; background: var(--panel); border-radius: 10px; color: var(--text-2); font-size: 0.95rem; }
+  .authorship p { margin: 0; }
+  .sig { white-space: nowrap; }
   .standfirst { font-size: 1.2rem; color: var(--text-2); margin-top: 0; }
   .pager { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); }
   .pager a { display: flex; flex-direction: column; gap: 0.2rem; text-decoration: none; color: var(--text); font-family: var(--font-brand); font-weight: 700; line-height: 1.3; }

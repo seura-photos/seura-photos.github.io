@@ -20,7 +20,12 @@ const latest = (await getPosts()).slice(0, 3);
       <div><h2>Simple editing</h2><p>Crop, straighten, rotate, exposure, contrast, color, red-eye, and a few classic effects like black and white, sepia, and vignette.</p></div>
       <div><h2>Tags, not albums</h2><p>Organize with tags and subtags, rate with stars, and find anything by name or tag.</p></div>
       <div><h2>An open format</h2><p>Edits use the <a href={FORMAT_URL}>Seura edit format</a>, an open specification any app can implement.</p></div>
-      <div><h2>Free, for good</h2><p>Open source under Apache 2.0. No subscriptions, no telemetry.</p></div>
+      <div><h2>Free, for good</h2><p>You'll never have to pay to use it or create an account. Open source under Apache 2.0, with no telemetry.</p></div>
+    </section>
+
+    <section class="promise" aria-labelledby="promise-title">
+      <h2 id="promise-title">The pricing promise</h2>
+      <p>Seura Photos is free. You will never have to pay to use it, and you will never need an account to use it. If I ever offer a paid option, it will be an optional service for features that cost money to run on my end, such as AI processing through a server I operate, and it would be the only part that needs an account. Everything the app does without it stays free. And because Seura is open source, anyone can keep using and building it regardless.</p>
     </section>
 
     <section class="latest">
@@ -42,6 +47,8 @@ const latest = (await getPosts()).slice(0, 3);
   .features div { background: var(--panel); border-radius: 10px; padding: 1.25rem 1.4rem; }
   .features h2 { font-size: 1.15rem; margin: 0 0 0.4rem; }
   .features p { margin: 0; color: var(--text-2); font-size: 1rem; }
+  .promise { max-width: var(--measure); margin: 0 auto 4rem; }
+  .promise h2 { margin-top: 0; }
   .latest { max-width: var(--measure); margin: 0 auto; }
   .latest > h2 { margin-top: 0; }
 </style>

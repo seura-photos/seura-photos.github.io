@@ -13,6 +13,7 @@ Posts are Markdown files in `src/content/devlog/`, named `NN-short-slug.md`, wit
 
 - **Always create new posts with `draft: true`.** Drafts are built locally but never listed or published. Only Nevada flips a post to `draft: false`, after reading and editing it. Never publish a post he hasn't approved.
 - **Voice:** first person, as Nevada. Plain, direct, specific; no hype, no filler, no invented anecdotes. Only state what he actually said, decided, or did. If you're unsure whether something was his idea, phrase it neutrally or ask.
+- **Authorship note:** every post page automatically ends with a note that Claude wrote it and Nevada reviewed it. Don't add another, and never remove it.
 - **Be open about Claude's role.** Say when something was Claude's suggestion, research, or mistake, and when Nevada decided or corrected something. That honesty is part of the point of the devlog.
 - **Sources:** the notes in `docs/journal/` in the seura repository, its commit history, decision records, and the specs. Link to documents in the seura repository rather than repeating them at length.
 - **When:** draft a post at the end of each milestone in `docs/milestone-plan.md` (seura repository), and whenever Nevada asks.
