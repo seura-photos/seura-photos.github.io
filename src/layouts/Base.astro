@@ -1,0 +1,64 @@
+---
+import '../styles/global.css';
+import { SITE_TITLE, SITE_DESCRIPTION, GITHUB_URL } from '../consts';
+
+interface Props { title?: string; description?: string; }
+const { title, description = SITE_DESCRIPTION } = Astro.props;
+const fullTitle = title ? `${title} · ${SITE_TITLE}` : SITE_TITLE;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const path = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{fullTitle}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonical}>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/rss+xml" title="Seura Photos devlog" href={new URL('/devlog/rss.xml', Astro.site)}>
+  <meta property="og:title" content={fullTitle}>
+  <meta property="og:description" content={description}>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={canonical}>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container bar">
+      <a class="brand" href="/" aria-label="Seura Photos, home">
+        <img src="/mark-small.svg" width="28" height="28" alt="">
+        <span>Seura <span class="light">Photos</span></span>
+      </a>
+      <nav aria-label="Site">
+        <a href="/devlog/" aria-current={path.startsWith('/devlog') ? 'page' : undefined}>Devlog</a>
+        <a href={GITHUB_URL}>GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <slot />
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Seura Photos is free and open source under the Apache 2.0 license. This site has no tracking, no cookies, and no ads.</p>
+      <p><a href="/devlog/rss.xml">Devlog RSS feed</a> · <a href={GITHUB_URL}>Source on GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
+
+<style>
+  .site-header { border-bottom: 1px solid var(--border); }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 64px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 0.55rem; text-decoration: none; color: var(--text); font-family: var(--font-brand); font-weight: 700; font-size: 1.2rem; letter-spacing: -0.01em; }
+  .brand .light { font-weight: 400; color: var(--text-2); }
+  nav { display: flex; gap: 0.25rem; }
+  nav a { color: var(--text); text-decoration: none; padding: 0.5rem 0.75rem; border-radius: 6px; }
+  nav a:hover { background: var(--panel); }
+  nav a[aria-current='page'] { background: var(--accent-subtle); }
+  main { padding: 3rem 0 4rem; }
+  .site-footer { border-top: 1px solid var(--border); color: var(--text-2); font-size: 0.9rem; padding: 1.5rem 0 2.5rem; }
+  .site-footer p { margin: 0.4rem 0; }
+</style>

@@ -1,0 +1,24 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props { posts: CollectionEntry<'devlog'>[]; }
+const { posts } = Astro.props;
+const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC' });
+---
+<ol class="posts" reversed>
+  {posts.map((p) => (
+    <li>
+      <a href={`/devlog/${p.id}/`}>
+        <span class="meta">Part {p.data.part} · <time datetime={p.data.date.toISOString().slice(0, 10)}>{fmt.format(p.data.date)}</time></span>
+        <span class="title">{p.data.title}</span>
+        <span class="desc">{p.data.description}</span>
+      </a>
+    </li>
+  ))}
+</ol>
+<style>
+  .posts { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  .posts a { display: flex; flex-direction: column; gap: 0.2rem; padding: 1.1rem 1.25rem; border: 1px solid var(--border); border-radius: 10px; text-decoration: none; color: var(--text); background: var(--surface); }
+  .posts a:hover { border-color: var(--accent); }
+  .title { font-family: var(--font-brand); font-weight: 700; font-size: 1.25rem; line-height: 1.3; }
+  .desc { color: var(--text-2); }
+</style>
