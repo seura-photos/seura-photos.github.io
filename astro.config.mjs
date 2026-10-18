@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://seura-photos.github.io',
+  site: 'https://seuraphotos.app',
   integrations: [sitemap()],
   trailingSlash: 'always',
 });

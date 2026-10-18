@@ -1,6 +1,6 @@
 # Seura Photos website — guide for Claude Code
 
-The public website for Seura Photos, built with Astro and published to GitHub Pages from `main` (see `.github/workflows/deploy.yml`). It is the project's home page and its devlog. The app itself lives in `seura-photos/seura`.
+The public website for Seura Photos, at https://seuraphotos.app, built with Astro and published to GitHub Pages from `main` (see `.github/workflows/deploy.yml`). It is the project's home page and its devlog. The app itself lives in `seura-photos/seura`.
 
 ## Commands
 
@@ -21,6 +21,8 @@ Posts are Markdown files in `src/content/devlog/`, named `NN-short-slug.md`, wit
 - Length: roughly 600 to 1,200 words. End with a link to the next post, or a line about what's next.
 
 ## Site rules
+
+- `public/schema/edit/` serves the edit format's JSON Schema at the URL used as `$schema` in every edit file. When the edit-format repository releases a new schema version, add it here; never change a published one.
 
 - No tracking, analytics, cookies, ads, or third-party requests. Fonts are self-hosted (`@fontsource/figtree`).
 - Colors and type come from `design/tokens.json` in the seura repository; `src/styles/global.css` mirrors them. Change both together.

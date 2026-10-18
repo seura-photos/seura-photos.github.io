@@ -32,6 +32,6 @@ Nothing in software or photography. The name stays.
 
 ## The organization
 
-The project lives in a GitHub organization, [seura-photos](https://github.com/seura-photos), with one repository for the app and one for the edit format. This site lives there too. The plan is to move it to seuraphotos.app once the domain is registered.
+The project lives in a GitHub organization, [seura-photos](https://github.com/seura-photos), with one repository for the app and one for the edit format. This site lives there too, at [seuraphotos.app](https://seuraphotos.app).
 
 Next: [an opinionated interface](/devlog/04-an-opinionated-interface/).
