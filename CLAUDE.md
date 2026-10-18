@@ -22,7 +22,7 @@ Posts are Markdown files in `src/content/devlog/`, named `NN-short-slug.md`, wit
 
 ## Site rules
 
-- `public/schema/edit/` serves the edit format's JSON Schema at the URL used as `$schema` in every edit file. When the edit-format repository releases a new schema version, add it here; never change a published one.
+- `public/schema/edit/` serves the edit format's JSON Schemas (`1.0.json`, the URL used as `$schema` in every edit file, and `1.x-reader.json`). Copy them from the edit-format repository whenever they change there. Once a format version is released (planned for M7), its schema never changes again; new versions are added alongside.
 - No tracking, analytics, cookies, ads, or third-party requests. Fonts are self-hosted (`@fontsource/figtree`).
 - Colors and type come from `design/tokens.json` in the seura repository; `src/styles/global.css` mirrors them. Change both together.
 - Every page must work at phone width and in light and dark mode, and meet WCAG AA contrast.
