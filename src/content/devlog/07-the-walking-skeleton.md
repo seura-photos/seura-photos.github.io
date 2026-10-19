@@ -10,6 +10,11 @@ The plan for the first milestone was a walking skeleton: every risky piece of th
 
 It took two days and eight pull requests. Claude Code wrote the code on my Windows PC; I reviewed and merged each pull request and checked the app on both machines. For the Mac, I turned on Remote Control, so the Windows session could hand checks to a second Claude Code session running on my MacBook Pro and get the results back. That worked better than I expected: the Mac session found real problems the Windows side couldn't see.
 
+<figure class="wide">
+  <img src="/images/devlog/m1-library.webp" alt="The unstyled M1 Library in dark mode: an Add folder button and a folder named Test Images with 3 photos on the left, and three thumbnails on the right: two snowy city streets and the Gateway Arch from below." loading="lazy">
+  <figcaption>The walking skeleton's Library: a folder list and a thumbnail grid, deliberately unstyled.</figcaption>
+</figure>
+
 ## Making the tests fail on purpose
 
 Early in the first slice, a check that was supposed to fail the build if the app wrote outside its allowed folders turned out to have no failure path at all: a scripted edit hadn't applied, and nothing complained. Claude caught it by planting a file where the app must never write and seeing the check pass anyway.
@@ -47,6 +52,16 @@ The last slice put the whole editing path together. Every edit is written once, 
 To prove the preview matches the export, we agreed on a check that runs inside the real app: it renders a test image with every preview path the window has and compares the pixels with the exported version. On my PC they match exactly; on my Mac, within one level out of 255. It also answered an open question: Apple's web view in an app like Seura does have WebGPU on macOS 26. No source we found had confirmed it.
 
 Opening a photo now shows the preview and an exposure slider. Drag it and the photo follows, the edit file beside the photo is saved within a second, and Export writes a JPEG in standard color that looks right everywhere.
+
+<figure class="wide">
+  <img src="/images/devlog/m1-editor.webp" alt="The M1 Editor showing a photo of the Gateway Arch from below against a cloudy blue sky, with Back to photos and Export buttons above and an Exposure slider at 0.00 EV below." loading="lazy">
+  <figcaption>The Editor with one adjustment, exposure, at 0.</figcaption>
+</figure>
+
+<figure class="wide">
+  <img src="/images/devlog/m1-editor-exposure.webp" alt="The same photo with Exposure at +2.10 EV: the sky is much brighter, partly white, and the arch's steel shows more detail." loading="lazy">
+  <figcaption>The same photo at +2.1 stops. The preview follows the slider as it moves.</figcaption>
+</figure>
 
 ## What's still open
 
