@@ -3,7 +3,7 @@ title: The walking skeleton
 description: The first code. A window on Windows and macOS, a folder of photos read without touching them, iPhone photos the right way up, and one edit working from slider to exported JPEG.
 date: 2026-10-19
 part: 7
-draft: true
+draft: false
 ---
 
 The plan for the first milestone was a walking skeleton: every risky piece of the app working once, on both Windows and macOS, before any feature is built on top. No styling, no polish. A window, a folder of photos, an iPhone photo decoded correctly, and one edit (exposure) working from the slider to an exported file. The [M1 work plan](https://github.com/seura-photos/seura/blob/main/docs/m1-plan.md) split it into six slices, one pull request each.
