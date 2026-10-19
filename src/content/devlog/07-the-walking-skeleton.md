@@ -50,7 +50,7 @@ Opening a photo now shows the preview and an exposure slider. Drag it and the ph
 
 ## What's still open
 
-The automated checks cover a lot, but not everything a person sees: whether the preview on screen is the right way up, whether wide-gamut colors look right on the display, and whether the slider feels smooth. I decided to fold that hands-on check into a larger round of testing once the app is more complete. Claude listed exactly what it has to cover, so it doesn't get lost.
+The automated checks cover a lot, but not everything a person sees: whether the preview on screen is the right way up, whether wide-gamut colors look right on the display, and whether the slider feels smooth. I've edited and exported a photo on my PC, and the export looked right. For the Mac, and the older WebGL2 path, I decided to fold the hands-on check into a larger round of testing once the app is more complete. Claude listed exactly what it has to cover, so it doesn't get lost.
 
 ## What's next
 
