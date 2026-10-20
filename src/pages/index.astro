@@ -2,10 +2,25 @@
 import Base from '../layouts/Base.astro';
 import PostList from '../components/PostList.astro';
 import { getPosts } from '../lib/posts';
-import { FORMAT_URL } from '../consts';
+import { FORMAT_URL, GITHUB_URL, SITE_DESCRIPTION } from '../consts';
 const latest = (await getPosts()).slice(0, 3);
+// No ratings, review counts, or download claims until they're real.
+const app = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Seura Photos',
+  description: SITE_DESCRIPTION,
+  url: new URL('/', Astro.site).href,
+  applicationCategory: 'MultimediaApplication',
+  operatingSystem: 'Windows 10, Windows 11, macOS 13 or later',
+  isAccessibleForFree: true,
+  license: 'https://www.apache.org/licenses/LICENSE-2.0',
+  codeRepository: GITHUB_URL,
+  creativeWorkStatus: 'In development',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+};
 ---
-<Base>
+<Base fullTitle="Seura Photos: a free, open-source photo organizer and editor for Windows and macOS" jsonLd={[app]}>
   <div class="container">
     <section class="hero">
       <img src="/app-icon.svg" width="120" height="120" alt="The Seura Photos icon: a sun of warm dots setting over a horizon of cool ones">

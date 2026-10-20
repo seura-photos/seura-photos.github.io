@@ -4,7 +4,7 @@ import PostList from '../../components/PostList.astro';
 import { getPosts } from '../../lib/posts';
 const posts = await getPosts();
 ---
-<Base title="Devlog" description="How Seura Photos is being designed and built, start to finish.">
+<Base title="Devlog" description="How Seura Photos is being designed and built, start to finish." image="devlog">
   <div class="container prose">
     <h1>Devlog</h1>
     <p class="intro">I'm building Seura Photos in the open: a free photo app for people who miss Picasa. This is the running record of how it's made, from the first question to the first release, including the parts that didn't work. I'm building it with Claude, Anthropic's AI model, as a collaborator, and these posts are open about that too. Claude writes most of them from our working sessions; I review every one for accuracy before it's published.</p>

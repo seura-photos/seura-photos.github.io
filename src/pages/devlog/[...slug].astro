@@ -13,8 +13,25 @@ export async function getStaticPaths() {
 const { post, newer, older } = Astro.props;
 const { Content } = await render(post);
 const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC' });
+const url = new URL(`/devlog/${post.id}/`, Astro.site).href;
+const article = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.date.toISOString().slice(0, 10),
+  url,
+  mainEntityOfPage: url,
+  image: new URL(`/og/devlog/${post.id}.png`, Astro.site).href,
+  author: { '@type': 'Person', name: 'Nevada Hamaker' },
+  publisher: { '@type': 'Organization', name: 'Seura Photos', url: new URL('/', Astro.site).href },
+  isPartOf: { '@type': 'Blog', name: 'Seura Photos devlog', url: new URL('/devlog/', Astro.site).href },
+  license: 'https://creativecommons.org/licenses/by/4.0/',
+};
 ---
-<Base title={post.data.title} description={post.data.description}>
+<Base title={post.data.title} description={post.data.description} image={`devlog/${post.id}`}
+  imageAlt={`Social card: Seura Photos devlog, part ${post.data.part}: ${post.data.title}`} type="article"
+  published={post.data.date} jsonLd={[article]}>
   <article class="container prose">
     <p class="meta"><a href="/devlog/">Devlog</a> · Part {post.data.part} · <time datetime={post.data.date.toISOString().slice(0, 10)}>{fmt.format(post.data.date)}</time></p>
     <h1>{post.data.title}</h1>

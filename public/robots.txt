@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://seuraphotos.app/sitemap-index.xml

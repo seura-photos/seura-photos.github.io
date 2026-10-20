@@ -2,6 +2,12 @@
 
 The public website for Seura Photos, at https://seuraphotos.app, built with Astro and published to GitHub Pages from `main` (see `.github/workflows/deploy.yml`). It is the project's home page and its devlog. The app itself lives in `seura-photos/seura`.
 
+## Who changes what
+
+- **Devlog posts** (`src/content/devlog/`, `public/images/devlog/`): Claude Code, alongside the app work.
+- **Everything else** (pages, layout, styles, SEO, social cards): Nevada's design sessions with Claude in the Claude app. Claude Code may fix a bug it finds there, but larger changes are discussed first.
+- Both push to this repository: pull before starting, keep changes small, and don't rewrite each other's work.
+
 ## Commands
 
 - `npm ci` then `npm run dev` for a local server; `npm run build` must pass before pushing.
@@ -23,6 +29,7 @@ Posts are Markdown files in `src/content/devlog/`, named `NN-short-slug.md`, wit
 ## Site rules
 
 - `public/schema/edit/` serves the edit format's JSON Schemas (`1.0.json`, the URL used as `$schema` in every edit file, and `1.x-reader.json`). Copy them from the edit-format repository whenever they change there. Once a format version is released (planned for M7), its schema never changes again; new versions are added alongside.
+- Social preview cards are generated at build time for every page (`src/lib/og.ts`, `src/pages/og/`), including each new post; nothing to do by hand. Structured data (schema.org JSON-LD) is in `Base.astro` and the pages. Never add ratings, review counts, or download numbers to it until they're real.
 - No tracking, analytics, cookies, ads, or third-party requests. Fonts are self-hosted (`@fontsource/figtree`).
 - Colors and type come from `design/tokens.json` in the seura repository; `src/styles/global.css` mirrors them. Change both together.
 - Every page must work at phone width and in light and dark mode, and meet WCAG AA contrast.
