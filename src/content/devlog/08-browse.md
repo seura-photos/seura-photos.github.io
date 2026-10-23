@@ -10,6 +10,16 @@ The second milestone, Browse, had one test: I point Seura at my real photo libra
 
 It took three days and about forty pull requests. At the end, build 0.1.1 went out as Seura's first numbered pre-release, unsigned, for my own use.
 
+<figure class="wide">
+  <img src="/images/devlog/m2-library.webp" alt="Seura's Library in dark mode on Windows: the Folders list on the left with a plus button in its heading and one folder, Test Images, with 3 photos; three thumbnails in the grid, the Gateway Arch from below (selected, with a small edited badge) and two snowy city streets; on the right, the Info panel with the arch's thumbnail, its name and date taken, size 3264 × 2448 and 5.8 MB, camera OLYMPUS IMAGING CORP. E-500, lens 14 mm ƒ/11, exposure 1/500 s, ISO 100, -0.3 EV, and Edited." loading="lazy">
+  <figcaption>The Library on Windows, in dark mode, with a photo's details in the Info panel.</figcaption>
+</figure>
+
+<figure class="wide">
+  <img src="/images/devlog/m2-library-light.webp" alt="The same Library in light mode on a Mac: the Test Images folder with the same three photos, sorted by file name, and the Info panel saying Select a photo to see its details." loading="lazy">
+  <figcaption>The same folder on the Mac, in light mode.</figcaption>
+</figure>
+
 ## Moving Seura's folder out of Documents
 
 The plan asked a small question: where to suggest the cache when Documents is synced to the cloud. I asked a bigger one. Windows pushes hard for OneDrive backup of Documents (I've refused it several times on my own PC), and macOS offers the same with iCloud. I asked to reconsider the location as a whole, with nothing hidden.
@@ -24,6 +34,11 @@ I asked whether translation had ever been discussed. It hadn't, beyond "English 
 
 Thumbnails were the speed work M1 left open. Claude wrote a benchmark before changing anything: 46 thumbnails a second on my PC, above the target of 30 but below our aim of 60. The surprise was how badly it used the processor's cores. Resizing started by copying each full-size photo, about 48 MB, and removing that copy alone took it to 67. Claude then judged that decoding photos at reduced size could wait. CI's first run disagreed: GitHub's small runners managed 10 to 15 a second. So the reduced-size decoding went in, and my PC reached 105.
 
+<figure class="wide">
+  <img src="/images/devlog/m2-viewer-zoom.webp" alt="The Viewer at 100% on a photo of a snowy street lined with apartment buildings, a radio tower in the distance and a person crossing the road; the bar shows the file name, 2 of 3, and the zoom buttons with 100% selected; the Info panel lists a Panasonic DMC-TZ4, 28 mm ƒ/3.3, 1/500 s, ISO 100." loading="lazy">
+  <figcaption>The Viewer at 100%: one pixel of the photo for each pixel of the screen.</figcaption>
+</figure>
+
 At the end of the milestone we measured every browsing target with a release build: the app runs a script on itself, on generated test photos, with its own separate settings so my library is never touched. Everything passed on both machines, most by a wide margin. Opening a 1,000-photo folder takes 0.05 seconds, the next photo appears in 36 to 48 milliseconds, and a 50,000-photo library uses 70 to 170 MB in Seura's core. The full table is in the [benchmarks](https://github.com/seura-photos/seura/blob/main/docs/benchmarks/m2-browsing.md). The first full run failed: the script missed a large scan starting and opened a photo while the library was still changing underneath it. Claude found the cause after three tries.
 
 ## Cloud photos, honestly
@@ -31,6 +46,11 @@ At the end of the milestone we measured every browsing target with a release bui
 On the Mac, cloud-only photos now show real thumbnails, taken from the sync service through Quick Look, as Finder shows them. All 5,997 photos in my OneDrive Pictures folder on the Mac are cloud-only. The Mac Claude session tried four of them: each got its thumbnail, and none was downloaded.
 
 Opening a cloud-only photo has to download it, and the spec promised "progress shown and a way to cancel". Before building that, Claude measured what Windows and macOS actually allow, with my permission, on two photos per machine. Neither tells an app how far a download has got: the file stays empty, then is suddenly complete. And stopping one means different things: on Windows the download finishes anyway, on the Mac it stops. So the promise couldn't be kept. My first thought was simpler anyway: show that it's downloading, then show the photo. The design session agreed and rewrote the requirement ([LIB-9](https://github.com/seura-photos/seura/blob/main/docs/functional-spec.md)): a blurred thumbnail, "Downloading 9.4 MB from the cloud…", no progress bar, and moving on is how you abandon it.
+
+<figure class="wide">
+  <img src="/images/devlog/m2-cloud-download.webp" alt="The Viewer opening a cloud-only photo: its thumbnail enlarged and blurred behind a small panel with a spinner and the words Downloading 3.4 MB from the cloud; the Info panel notes that the photo is in the cloud and its camera, lens, and location show once it's on this computer." loading="lazy">
+  <figcaption>Opening a photo that's only in the cloud: no progress bar, because the system doesn't report one.</figcaption>
+</figure>
 
 ## Checking against the phone
 
