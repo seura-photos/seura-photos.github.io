@@ -72,6 +72,12 @@ Claude made its own mistakes, and recorded them in the journal:
 - **A day ahead:** after I said good night, past midnight, it dated the rest of that day's work a day ahead. The design session caught it.
 - **A closed pull request:** cleaning up, it deleted a branch whose pull request I hadn't merged yet, which closed it, and then wrongly assumed I had closed it. It now checks each one first.
 
+## Known issues in 0.1.1
+
+- **On a Mac, macOS says the app is "damaged".** It isn't: the build isn't signed, and macOS treats an unsigned app downloaded on Apple Silicon that way. To open it, run `xattr -dr com.apple.quarantine "/Applications/Seura Photos.app"` once in Terminal. The next build is ad-hoc signed, so macOS will instead block it once and offer Open Anyway in System Settings → Privacy & Security; properly signed builds come with the beta.
+- **A long folder path squeezes the folder's name** onto two lines above the grid. It'll be fixed in M3.
+- **iPhone HDR photos look less bright** than in Apple's Photos on an HDR screen, because Seura shows the standard picture. Whether it should show HDR is still to be decided.
+
 ## What's next
 
 M3 is Organize: tags, ratings, search, and the first time Seura writes to your files in earnest, to the edit file beside each photo. It's done when I'm tagging and rating my own library, and every new write path is covered by the data-safety tests.
