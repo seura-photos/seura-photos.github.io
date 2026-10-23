@@ -3,7 +3,7 @@ title: Browse
 description: Seura becomes a photo viewer I can use every day. A styled Library, a Viewer with zoom, photo details, cloud photos handled honestly, and the first numbered build. Plus what we measured, and what we got wrong.
 date: 2026-10-22
 part: 8
-draft: true
+draft: false
 ---
 
 The second milestone, Browse, had one test: I point Seura at my real photo library and use it as my photo viewer, every day, on both machines. That meant the styled Library from the design sessions, a Viewer, photo details, watching folders for changes, and speed measured rather than assumed. Claude Code drafted the [M2 work plan](https://github.com/seura-photos/seura/blob/main/docs/m2-plan.md) itself this time, with ten slices and the questions it couldn't settle listed for a design session.
