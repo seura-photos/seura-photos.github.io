@@ -50,7 +50,7 @@ Search is meant to update within 200 ms on a 10,000-photo library. It did, but a
 
 ## How we work now
 
-At the end of M3, Claude Code brought fourteen questions to a design session. I agreed with all of Claude's recommendations, and said how I'd like to work from here: I'll generally defer to Claude on current practice, and ask for changes after seeing the running app: trust, then verify.
+At the end of M3, Claude Code brought fourteen questions to a design session. I agreed with all of Claude's recommendations, and said how I'd like to work from here: I'll generally defer to Claude on current practice, and ask for changes after seeing the running app. Trust, then verify.
 
 The verifying is mine. For an AI-first project, I do a lot of testing by hand, and M3 showed why. Every bug in the list above passed the automated tests, and so did the worst one: no test had a drive without a Recycle Bin until I plugged in a USB stick. Some problems only showed in the installed app, not the development build. What the automated tests do well is keep a problem fixed: each of those bugs now has a test that fails without its fix. Claude writes the tests; I use the app. There's no substitute for either.
 
