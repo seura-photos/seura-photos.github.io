@@ -10,7 +10,10 @@ The third milestone, Organize, is the first where Seura writes to my photo folde
 
 Claude Code drafted the [M3 work plan](https://github.com/seura-photos/seura/blob/main/docs/m3-plan.md) with eight questions for a design session, and built it in eleven slices over two days, in about thirty pull requests. At the end came builds 0.2.0 and 0.2.1, the first [early builds](https://github.com/seura-photos/seura/releases) anyone can try ([decision 0016](https://github.com/seura-photos/seura/blob/main/docs/decisions/0016-public-early-builds.md)).
 
-<!-- Screenshot to take together: the Library with the TAGS tree, a photo selected, the Info panel showing its stars and tag chips. -->
+<figure class="wide">
+  <img src="/images/devlog/m3-library.webp" alt="Seura's Library in dark mode on Windows, showing the tag flowers/blossom: 13 photos from every folder, of white tree blossom and pink-and-white rhododendrons, several with small star ratings under them. The sidebar lists the Flowers folder with 18 photos, then TAGS: flowers, opened to show blossom (13, selected) and rhododendron (6), and garden (3). A rhododendron is selected, and the Info panel shows its camera, a Casio EX-S500, a rating of four stars out of five, and two tags, flowers/blossom and flowers/rhododendron, each with a remove button, above Add tag." loading="lazy">
+  <figcaption>Tags and ratings in the Library. Choosing a tag shows its photos from every folder.</figcaption>
+</figure>
 
 ## One way to write
 
@@ -24,7 +27,10 @@ Undo took the most discussion. I wanted the edit files to be the only record of 
 
 Tags match the way people expect, in any language: `Ärzte` finds `ärzte`, `STRASSE` finds `straße`, and an accented letter typed one way finds the same letter stored another way, as macOS often stores it. Typing `Family` when `family` exists adds `family`.
 
-<!-- Screenshot to take together: the tag picker open beside a photo, with "2 of 3" on a tag only some photos have. -->
+<figure class="wide">
+  <img src="/images/devlog/m3-tag-picker.webp" alt="Three photos of rhododendrons selected in the Flowers folder, with the tag picker open beside one of them. The picker is titled Tag 3 photos, with the hints Enter adds and Esc closes. It shows the tag all three share, flowers/rhododendron, as a chip, then a field with bl typed, an option to create the tag bl, and the existing tag flowers/blossom, used by 13 photos, highlighted. The Info panel says 3 photos selected, the rating is Mixed, and the tag garden is on 1 of 3." loading="lazy">
+  <figcaption>The tag picker, opened with T. Typing finds the existing tag, and Enter adds it.</figcaption>
+</figure>
 
 ## Deleting, measured first
 
