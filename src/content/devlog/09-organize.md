@@ -1,9 +1,9 @@
 ---
 title: Organize
 description: Seura starts writing to my photo folders. Tags, ratings, search, undo, and Delete, in two days and the first public builds. Plus the worst bug so far, which my USB stick found.
-date: 2026-10-27
+date: 2026-10-28
 part: 9
-draft: true
+draft: false
 ---
 
 The third milestone, Organize, is the first where Seura writes to my photo folders in earnest. Tags and ratings go into a small edit file beside each photo, and Delete sends photos to the Recycle Bin or Trash. Its test: I tag and rate my own library, every edit file passes the edit format's checker, and the data-safety tests cover every new way Seura writes.
@@ -67,4 +67,4 @@ The verifying is mine. For an AI-first project, I do a lot of testing by hand, a
 
 ## What's next
 
-M3 ends once I'm tagging and rating my library with 0.2.1 on both machines. Then M4 is Fix: the full editor, with crop, straighten, adjustments and Enhance, each built once, for both the preview and the export.
+M3 is done now that I'm tagging and rating my library with 0.2.1 on both machines. Then M4 is Fix: the full editor, with crop, straighten, adjustments and Enhance, each built once, for both the preview and the export.
