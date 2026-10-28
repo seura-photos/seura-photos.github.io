@@ -3,6 +3,8 @@ import Base from '../layouts/Base.astro';
 import PostList from '../components/PostList.astro';
 import { getPosts } from '../lib/posts';
 import { FORMAT_URL, GITHUB_URL, SITE_DESCRIPTION } from '../consts';
+const RELEASES_URL = `${GITHUB_URL}/releases`;
+const ISSUES_URL = `${GITHUB_URL}/issues`;
 const latest = (await getPosts()).slice(0, 3);
 // No ratings, review counts, or download claims until they're real.
 const app = {
@@ -26,16 +28,44 @@ const app = {
       <img src="/app-icon.svg" width="120" height="120" alt="The Seura Photos icon: a sun of warm dots setting over a horizon of cool ones">
       <h1>Seura Photos</h1>
       <p class="lede">A free, open-source photo app for Windows and macOS, in the spirit of Picasa.</p>
-      <p class="status"><span class="dot" aria-hidden="true"></span>In development. There's nothing to download yet. <a href="/devlog/">Follow along in the devlog.</a></p>
+      <p class="status"><span class="dot" aria-hidden="true"></span>In development, with an early build to try. <a href="#try">What it can do so far</a></p>
     </section>
 
     <section class="features" aria-label="What it does">
       <div><h2>Your folders, in place</h2><p>No importing, no managed library, no account. Point it at the folders you already have.</p></div>
       <div><h2>Originals never touched</h2><p>Every edit is saved in a small, readable file beside the photo, so you can change or undo it at any time.</p></div>
-      <div><h2>Simple editing</h2><p>Crop, straighten, rotate, exposure, contrast, color, red-eye, and a few classic effects like black and white, sepia, and vignette.</p></div>
+      <div><h2>Simple editing</h2><p>Crop, straighten, rotate, brightness, contrast, highlights and shadows, color, red-eye, and a few classic effects like black and white, sepia, and vignette.</p></div>
       <div><h2>Tags, not albums</h2><p>Organize with tags and subtags, rate with stars, and find anything by name or tag.</p></div>
       <div><h2>An open format</h2><p>Edits use the <a href={FORMAT_URL}>Seura edit format</a>, an open specification any app can implement.</p></div>
       <div><h2>Free, for good</h2><p>You'll never have to pay to use it or create an account. Open source under Apache 2.0, with no telemetry.</p></div>
+    </section>
+
+    <section class="try" id="try" aria-labelledby="try-title">
+      <h2 id="try-title">Try an early build</h2>
+      <p>Seura Photos is still being built, and each stage ends with an early build anyone can try. It isn't the beta yet: some features are missing, and you may find bugs.</p>
+      <div class="columns">
+        <div>
+          <h3>What it does so far</h3>
+          <ul>
+            <li>Shows the photos in the folders you choose, including folders synced by OneDrive and similar services, without downloading them all</li>
+            <li>Views photos full size, with their correct orientation and colors</li>
+            <li>Tags and rates photos, with filters and search</li>
+            <li>Moves photos you delete to the Recycle Bin or Trash</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Not yet</h3>
+          <ul>
+            <li>Editing: crop, light, color, and effects come next</li>
+            <li>Export, presets, and the Review flow</li>
+            <li>Automatic updates: check back here or in the devlog for new builds</li>
+          </ul>
+        </div>
+      </div>
+      <p><strong>Your photos are safe.</strong> Seura never changes, moves, or renames them. Tags and ratings are saved in a small file beside each photo, and Seura keeps its settings and thumbnails in a <code>Seura Photos</code> folder in your home folder.</p>
+      <p><strong>It isn't signed for distribution yet,</strong> so Windows SmartScreen warns before installing, and on a Mac the first launch needs System Settings → Privacy &amp; Security → Open Anyway. Each release's notes have the steps.</p>
+      <p class="actions"><a class="button" href={RELEASES_URL}>Download from GitHub</a> <a href={ISSUES_URL}>Report a problem</a></p>
+      <p class="meta">For Windows 10 and 11, and macOS 13 or later. Free, with no account.</p>
     </section>
 
     <section class="promise" aria-labelledby="promise-title">
@@ -62,6 +92,16 @@ const app = {
   .features div { background: var(--panel); border-radius: 10px; padding: 1.25rem 1.4rem; }
   .features h2 { font-size: 1.15rem; margin: 0 0 0.4rem; }
   .features p { margin: 0; color: var(--text-2); font-size: 1rem; }
+  .try { max-width: var(--measure); margin: 0 auto 4rem; }
+  .try h2 { margin-top: 0; }
+  .try h3 { font-size: 1.05rem; margin: 0 0 0.4rem; }
+  .try .columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; margin: 1.25rem 0; }
+  .try .columns > div { background: var(--panel); border-radius: 10px; padding: 1.1rem 1.3rem; }
+  .try ul { margin: 0; padding-left: 1.2rem; color: var(--text-2); }
+  .try li + li { margin-top: 0.3rem; }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 1.5rem; }
+  .button { display: inline-block; background: var(--accent); color: #fff; padding: 0.65rem 1.25rem; border-radius: 8px; text-decoration: none; font-weight: 600; }
+  .button:hover { background: var(--accent-hover, var(--accent)); color: #fff; }
   .promise { max-width: var(--measure); margin: 0 auto 4rem; }
   .promise h2 { margin-top: 0; }
   .latest { max-width: var(--measure); margin: 0 auto; }
