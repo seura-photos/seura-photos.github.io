@@ -8,7 +8,10 @@ draft: true
 
 The fourth milestone, Fix, is the Editor: crop and straighten, rotate and flip, light and color, effects, red-eye, and Enhance, with undo that survives closing the photo. Its test is that I fix my own photos with Seura instead of another app. As of [build 0.3](https://github.com/seura-photos/seura/releases/tag/v0.3.0), I can.
 
-<!-- Screenshot: the Editor on one of Nevada's photos, the panel showing Light and Color with some sliders moved. -->
+<figure class="wide">
+  <img src="/images/devlog/m4-editor.webp" alt="Seura's Editor in dark mode on Windows, showing a flowering tree photographed from below against a blue sky, with the sun shining through the white blossoms. The header shows the file name, CIMG0626.JPG, and Edits saved automatically, with undo, redo and the zoom controls at Fit. On the right, Hold to compare and Done sit above Enhance, Crop and straighten, and the rotate and flip buttons. Under Light, Brightness is 0, Contrast +40, Highlights −42 and Shadows +40; under Color, Temperature is −23, Tint 0 and Saturation +48. Revert to original is pinned at the bottom of the panel, and a filmstrip of the folder's flower photos runs along the bottom." loading="lazy">
+  <figcaption>The Editor in build 0.3. The sliders redraw the photo on every frame as they move, and each change is saved beside the photo.</figcaption>
+</figure>
 
 Claude Code drafted the [M4 work plan](https://github.com/seura-photos/seura/blob/main/docs/m4-plan.md) with eight questions, six for a design session and two for me, and built it in twelve slices over four days, in about forty pull requests. First came an interim build, 0.2.2, my choice, so testers could say which version they have.
 
@@ -23,6 +26,11 @@ At the end, a small Python program written straight from the appendix's text ren
 ## Highlights and shadows
 
 Highlights and shadows need to know what's bright and dark around each pixel, without the glow a plain blur leaves along edges. Claude Code compared three methods on generated scenes with hard edges, such as a dark tree against a bright sky, and recommended a guided filter: its halo is too small to see, and the older WebGL2 preview on macOS 13 to 15 can run it. I agreed, and on my own photos the sliders don't feel too strong or too weak. Claude Code's view was that they're a little gentler than Lightroom's at the extremes, which also keeps noise down.
+
+<figure class="wide">
+  <img src="/images/devlog/m4-crop.webp" alt="Crop and straighten mode on the same photo of a flowering tree. The photo is turned 9.9 degrees, so its edges slant against the dark surround, and a 4:3 crop box with thirds lines sits inside it, labeled 4:3 · 2,108 × 1,581. Outside the box the photo is darkened. The panel on the right shows the aspect ratios, with Original and Landscape chosen, the Straighten slider at +9.9°, the note The crop shrinks as needed so no empty corners show, Reset crop, and Cancel and Done. The header says Enter to apply · Esc to cancel." loading="lazy">
+  <figcaption>Crop and straighten. The box stays inside the turned photo, and slides along its slanted edge when dragged against it.</figcaption>
+</figure>
 
 ## What I found by using it
 
