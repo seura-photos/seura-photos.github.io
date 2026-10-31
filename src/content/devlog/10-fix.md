@@ -34,7 +34,7 @@ As in M3, the automated tests passed and my testing found what they couldn't:
 - **The flip buttons' icons were swapped.** Claude Code had chosen them by name without looking at the drawings.
 - **Revert to original was hard to reach.** Once Effects were added, the panel scrolled, and Revert's confirmation opened below the window, out of sight. Scrolling to it would put the pointer over the confirm button, which our interaction rules forbid. Claude Code suggested pinning Revert to the panel's bottom with its confirmation opening upward, and the design session agreed.
 - **No button changed under the mouse;** only the pointer turned into a hand. I hadn't noticed in three milestones. The design session specified hover and pressed states, and the arrow pointer everywhere but links, as native apps have.
-- **After clicking Enhance in the Library, Enter didn't open the photo.** I found it just before tagging 0.3. The click had moved the keyboard focus to the button, so Enter pressed Enhance again. Clicking a quick fix now leaves the focus where it was.
+- **After clicking Enhance in the Library, Enter didn't open the photo.** I found it just before tagging 0.3. The click had moved the keyboard focus to the button, so Enter pressed Enhance again. Clicking a quick fix button now leaves the focus where it was.
 
 Enhance and red-eye were Claude Code's to build and mine to judge. Enhance's white balance took three methods to get right; on my photos it does make them generally better, and I accepted it as it is. Red-eye on an extreme photo left a little red but clearly improved it. I set aside a strength slider, which would change the format for what's usually a one-click fix.
 
