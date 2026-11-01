@@ -3,7 +3,7 @@ title: Fix
 description: The Editor, built in four days and shipped in build 0.3. Each edit is one shader for the preview and the export, and the edit format gained a formulas appendix that another app could follow. Plus what I found by using it.
 date: 2026-10-31
 part: 10
-draft: true
+draft: false
 ---
 
 The fourth milestone, Fix, is the Editor: crop and straighten, rotate and flip, light and color, effects, red-eye, and Enhance, with undo that survives closing the photo. Its test is that I fix my own photos with Seura instead of another app. As of [build 0.3](https://github.com/seura-photos/seura/releases/tag/v0.3.0), I can.
