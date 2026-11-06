@@ -8,11 +8,11 @@ draft: true
 
 Since build 0.3, my edits could be seen in Seura and nowhere else. The fifth milestone, Reuse and share, fixes that: export, copying edits between photos, and presets. Its test is that I export real photos for sharing, and they look right in other apps on both platforms.
 
-Claude Code drafted the [M5 work plan](https://github.com/seura-photos/seura/blob/main/docs/m5-plan.md) with twelve questions for a design session, and built it in ten slices over three days. Putting export first, ahead of copy and paste, was its suggestion: reusing edits matters less while they can't leave the app.
+Claude Code drafted the [M5 work plan](https://github.com/seura-photos/seura/blob/main/docs/m5-plan.md) with its open questions for a design session and me, and built it in ten slices over three days. Putting export first, ahead of copy and paste, was its suggestion: reusing edits matters less while they can't leave the app.
 
 ## First, 0.3.1
 
-Using 0.3, I asked for a cloud icon on photos that are only in OneDrive, and for Enhance in the grid to be able to download them. The design session settled how: one photo downloads without asking, as opening it does, and a selection asks once, then shows progress and a Stop button.
+Using 0.3, I asked for a cloud icon on photos that are only in OneDrive, and for a way to download them when something in the grid, such as Enhance, needs their pixels. The design session settled how: one photo downloads without asking, as opening it does, and a selection asks once, then shows progress and a Stop button.
 
 Testing Stop on real cloud photos, I caught a message that wasn't true. Stopping a batch of four right away said four photos weren't downloaded, but on the Mac the first one arrived anyway: Seura stops waiting, but a read already under way can't be cancelled. The message now says they "weren't enhanced", which holds either way. I also found that rotating a cloud-only photo didn't turn its thumbnail, as Claude Code had flagged it might.
 
