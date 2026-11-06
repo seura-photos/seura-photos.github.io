@@ -1,9 +1,9 @@
 ---
 title: Share
 description: Edited photos can leave Seura now. Export with the conversion to standard colors, copy and paste of edits, and presets saved as files, in three days. Plus build 0.3.1, and a Cancel button that wouldn't hold still.
-date: 2026-11-05
+date: 2026-11-06
 part: 11
-draft: true
+draft: false
 ---
 
 Since build 0.3, my edits could be seen in Seura and nowhere else. The fifth milestone, Reuse and share, fixes that: export, copying edits between photos, and presets. Its test is that I export real photos for sharing, and they look right in other apps on both platforms.
