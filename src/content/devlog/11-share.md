@@ -20,7 +20,9 @@ That went out as [build 0.3.1](https://github.com/seura-photos/seura/releases/ta
 
 ## Export
 
-<!-- Screenshot: the Export dialog -->
+<figure class="wide">
+  <img src="/images/devlog/m5-export.webp" alt="The Export dialog in dark mode on Windows, over the Flowers folder with four photos selected. It's titled Export 4 photos. Save to shows C:\Users\Nevada\Documents\Seura devlog\Exports with a Choose button. Under Format, JPEG is chosen with Quality at 90, and PNG is the other choice. Under Size, Long edge up to 2048 px is chosen, among Original size, up to 1600 px, up to 1024 px and a custom limit, with the note Photos smaller than the limit keep their size and aren't enlarged. Under Details, Remove location data and Include tags and rating as keywords are both ticked. A note says edits are applied to the exported copies, originals aren't changed, and existing files are never overwritten: a name that's taken gets a number, like IMG_4417 (1).jpg. Cancel and Export are at the bottom." loading="lazy">
+</figure>
 
 Exports should start from colors that weren't clipped, so slice 1 fixed [#188](https://github.com/seura-photos/seura/issues/188). Claude Code measured the plan's approach first, as the plan asked, and found wrong values and about fifteen times the time. Seura now applies each profile's curves and matrix itself: nothing clips, and it's three times faster than before.
 
@@ -43,7 +45,9 @@ The message now keeps one width, with Cancel at its right edge, and long names a
 
 ## Copy and paste
 
-<!-- Screenshot: the Paste edits dialog -->
+<figure class="wide">
+  <img src="/images/devlog/m5-paste.webp" alt="The Paste edits dialog over the Flowers folder, with four photos of white rhododendrons and blossom selected. It's titled Paste edits onto 4 photos, and says Copied from P1000036.JPG. Adjustments (tone and color) is ticked. Effects and Crop and rotation are not, and each says None copied. Cancel and Paste are at the bottom." loading="lazy">
+</figure>
 
 Shift+Ctrl+C (Shift+Cmd+C on the Mac) copies a photo's edits, and Shift+Ctrl+V asks which groups to paste: Adjustments, Effects, and Crop and rotation. Photos in the cloud aren't downloaded.
 
@@ -67,4 +71,4 @@ A change made just before quitting is now saved ([#174](https://github.com/seura
 
 ## What's next
 
-Build 0.4 comes next, with all of this. M5 is done once I've exported real photos for sharing with it and they look right in other apps. Then M6 is Review: running newly added photos through rating, rotating, Enhance, tags, marking for deletion and editing, in one flow.
+All of this is in [build 0.4](https://github.com/seura-photos/seura/releases/tag/v0.4.0), a pre-release. M5 is done once I've exported real photos for sharing with it and they look right in other apps. Then M6 is Review: running newly added photos through rating, rotating, Enhance, tags, marking for deletion and editing, in one flow.
