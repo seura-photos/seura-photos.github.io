@@ -33,10 +33,10 @@ const app = {
 
     <section class="features" aria-label="What it does">
       <div><h2>Your folders, in place</h2><p>No importing, no managed library, no account. Point it at the folders you already have, including ones synced by OneDrive, iCloud Drive, Dropbox, or Google Drive. Photos still in the cloud appear without being downloaded, and only come down when you open one.</p></div>
-      <div><h2>Originals never touched</h2><p>Every edit is saved in a small, readable file beside the photo, so you can change or undo it at any time.</p></div>
+      <div><h2>Originals never touched</h2><p>Every edit is saved in a small, readable file beside the photo, so you can change or undo it at any time, in the <a href={FORMAT_URL}>Seura edit format</a>, an open specification any app can implement.</p></div>
       <div><h2>Simple editing</h2><p>Crop, straighten, rotate, brightness, contrast, highlights and shadows, color, red-eye, and a few classic effects like black and white, sepia, and vignette. Copy edits to other photos, or save them as presets.</p></div>
       <div><h2>Tags, not albums</h2><p>Organize with tags and subtags, rate with stars, and find anything by name or tag.</p></div>
-      <div><h2>An open format</h2><p>Edits use the <a href={FORMAT_URL}>Seura edit format</a>, an open specification any app can implement.</p></div>
+      <div><h2>Sort new photos fast</h2><p>Review goes through new photos one at a time, with one key for each action: rate, rotate, fix, tag, or mark to delete. Nothing is deleted until you finish.</p></div>
       <div><h2>Free, for good</h2><p>You'll never have to pay to use it or create an account. Open source under Apache 2.0, with no telemetry.</p></div>
     </section>
 
@@ -56,18 +56,20 @@ const app = {
             <li>Black and white, sepia, a vignette, and red-eye correction</li>
             <li>Quick rotate and Enhance right from the Library and the Viewer</li>
             <li>Copies edits from one photo to others, and saves them as presets to apply in one click</li>
+            <li>Reviews photos one at a time with one key per action, offers to review new photos as they arrive, and deletes the ones you mark only when you finish</li>
             <li>Exports edited photos as JPEG or PNG, full size or smaller, with colors that look right everywhere and, if you like, your tags and ratings as keywords other apps can read</li>
           </ul>
         </div>
         <div>
           <h3>Not yet</h3>
           <ul>
-            <li>The Review flow, for sorting through new photos one at a time</li>
             <li>Automatic updates: check back here or in the devlog for new builds</li>
+            <li>Settings, cleaning up Seura's own files, and a user guide</li>
+            <li>Signed installers, and the beta with volunteer testers</li>
           </ul>
         </div>
       </div>
-      <p><strong>Your photos are safe.</strong> Seura never changes, moves, or renames them. Your edits, tags, and ratings are saved in a small file beside each photo, exports are always new files, and Seura keeps its settings and thumbnails in a <code>Seura Photos</code> folder in your home folder.</p>
+      <p><strong>Your photos are safe.</strong> Seura never changes, moves, or renames them. Your edits, tags, and ratings are saved in a small file beside each photo, exports are always new files, deleting always goes to the Recycle Bin or Trash, and Seura keeps its settings and thumbnails in a <code>Seura Photos</code> folder in your home folder.</p>
       <p><strong>It isn't signed for distribution yet,</strong> so Windows SmartScreen warns before installing, and on a Mac the first launch needs System Settings → Privacy &amp; Security → Open Anyway. Each release's notes have the steps.</p>
       <p class="actions"><a class="button" href={RELEASES_URL}>Download from GitHub</a> <a href={ISSUES_URL}>Report a problem</a></p>
       <p class="meta">For Windows 10 and 11, and macOS 13 or later. Free, with no account.</p>
