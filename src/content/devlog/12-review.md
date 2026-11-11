@@ -22,6 +22,11 @@ Then Claude Code built it in six slices and a wrap-up, all on one day. I tried m
 
 ## The Review screen
 
+<figure class="wide">
+  <img src="/images/devlog/m6-review.webp" alt="The Review screen in dark mode on Windows, titled Reviewing Flowers, with Exit review at the top left and 9 of 18 with a progress bar at the top right. A photo of white rhododendron blossom fills most of the window. Beneath it, a line reads CIMG0624.JPG, Mar 26, 2007, four stars, and the tag Garden. The action bar at the bottom has Back, rotate left and rotate right with the keys [ and ], Edit (E), Tag (T), Mark to delete (X), Enhance (A), five stars with four filled, and a blue Next button." loading="lazy">
+  <figcaption>Halfway through a review: the photo's name, date, rating and tags under it, and each action's key on its button.</figcaption>
+</figure>
+
 Review opens over the Library: the photo as large as the window allows, "1 of 5" with a progress bar, and the file name, date, rating and tags underneath. Every action is one key: 0 to 5 for stars, [ and ] to rotate, A for Enhance, T to tag, E to edit, X to mark, and → for the next photo. Home, End and a click on the progress bar jump within a batch.
 
 A review keeps its own list of photos, Claude Code's choice. Reading the grid's list would have been simpler, but with a filter on, rating a photo out of the filter would have dropped it from the review while it was on screen.
@@ -37,6 +42,11 @@ While testing, I asked for a key to start a review, and for X in the Library. R 
 Then I found a gap: X won't put a mark back in the Library, but Ctrl+Z will. Claude Code recommended keeping it, and I agreed. Undo can only restore a mark a review made, from the last few actions, and without it a stray X on a selection would lose review work for good.
 
 ## Finishing
+
+<figure class="wide">
+  <img src="/images/devlog/m6-summary.webp" alt="The end of the same review, titled End of review. Four counts read 16 Rated, 0 Edited, 5 Tagged and 2 Marked for deletion. Below them: Everything is saved, and nothing has been deleted yet. A button reads Move 2 marked photos to the Recycle Bin. Next to Rating, a chooser set to At least 4 stars sits beside a button reading Export 12 photos. A blue button reads Back to the Library, and a Back button is at the bottom." loading="lazy">
+  <figcaption>The end of a review: nothing has gone anywhere until one of these buttons is pressed.</figcaption>
+</figure>
 
 Next on the last photo opens a summary of what changed: rated, tagged, edited and marked. It offers to move the marked photos to the Recycle Bin or Trash in one confirmation, and to export the photos rated at or above a number of stars. The counts come from each photo's edit history, Claude Code's choice. A change made in the Editor counts like any other, and one that's undone drops out by itself.
 
