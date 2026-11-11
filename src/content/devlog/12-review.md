@@ -56,6 +56,11 @@ The Mac session, the Claude Code session on my MacBook, set up a hands-on script
 
 A review with photos only in OneDrive asks once: download them as I go, a few ahead, or show thumbnails only. Marked cloud photos are downloaded only after the final confirmation, which says how many and how large, and that they leave OneDrive too. Claude Code tested this on real cloud-only files in a OneDrive folder I made for tests. That run caught a thumbnail painting over a marked photo's red banner, which no unit test would have seen.
 
+<figure class="wide">
+  <img src="/images/devlog/m6-banner.webp" alt="The Library in dark mode on Windows, with the Flowers folder chosen: 18 photos of white blossom, rhododendrons and flower beds, most with three to five stars under them. Above the grid, a blue banner reads 4 new photos in Flowers. Sort through them one at a time? with a blue Review button and a Not now button." loading="lazy">
+  <figcaption>Four photos copied into the folder while Seura was closed, offered at the next launch.</figcaption>
+</figure>
+
 The banner appears when photos arrive in a library folder: at launch, or a minute after the last one syncs while Seura is open. Exports don't count, and neither does a folder just added. Claude Code added one check the plan didn't ask for: a photo renamed in Explorer would otherwise have looked new. I checked the banner by hand on both machines.
 
 ## Measuring
