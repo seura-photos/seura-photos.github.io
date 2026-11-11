@@ -3,7 +3,7 @@ title: Review
 description: Sorting through new photos one at a time, one key per action, with nothing deleted until the end. The sixth milestone, built in a day, and the two places where only the Mac could show what was wrong.
 date: 2026-11-10
 part: 12
-draft: true
+draft: false
 ---
 
 The sixth milestone, Review, is one flow for new photos: rate, rotate, Enhance, tag, edit, and mark the ones to delete, one photo at a time. Its test is that I run my own newly added photos through it, end to end.
