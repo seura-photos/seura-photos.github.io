@@ -6,6 +6,7 @@ export async function getStaticPaths() {
   const posts = await getPosts();
   const cards: { slug: string; card: Card }[] = [
     { slug: 'home', card: { eyebrow: 'Free and open source', title: 'A photo app for Windows and macOS, in the spirit of Picasa' } },
+    { slug: 'about', card: { eyebrow: 'About Seura Photos', title: 'Who is building it, why, and how it is made' } },
     { slug: 'devlog', card: { eyebrow: 'Seura Photos devlog', title: 'How Seura Photos is being designed and built, in the open' } },
     ...posts.map((p) => ({ slug: `devlog/${p.id}`, card: { eyebrow: `Seura Photos devlog · Part ${p.data.part}`, title: p.data.title } })),
   ];

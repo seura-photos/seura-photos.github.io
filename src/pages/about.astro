@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import { GITHUB_URL } from '../consts';
+
+const SITE_URL = (Astro.site?.href ?? 'https://seuraphotos.app/').replace(/\/$/, '');
+const LINKEDIN_URL = 'https://www.linkedin.com/in/nevadahamaker';
+const PERSONAL_URL = 'https://nevadah.github.io';
+
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${SITE_URL}/about/#nevada`,
+  name: 'Nevada Hamaker',
+  url: `${SITE_URL}/about/`,
+  jobTitle: 'Software engineer',
+  sameAs: [PERSONAL_URL, LINKEDIN_URL, 'https://github.com/nevadah'],
+};
+---
+<Base title="About" description="Who's building Seura Photos, why, and how it's made." image="about" jsonLd={[person]}>
+  <div class="container prose">
+    <h1>About</h1>
+    <p class="intro">I'm Nevada Hamaker, and I'm building Seura Photos.</p>
+
+    <p>I've worked in software for about thirty years. I started in technical support and moved into testing, then development. I tested ToolBook at Asymetrix and Visio at Microsoft, then spent fifteen years at Big Fish Games, where I went from test engineer to software engineer, working on its web store and moving its services to the cloud. Along the way I worked on a cross-platform desktop app with a shared C++ core and much of its interface in a web view, and using <a href="https://tauri.app">Tauri</a> as the framework for Seura is a similar experience.</p>
+
+    <h2>Why Seura</h2>
+    <p>I used Picasa for years, and nothing I found replaced it after Google retired it: simple, local, and gentle with your photos. So I decided to build it, for myself and for anyone else who misses it. It's also the first application I've built from scratch at this scale, and I wanted to do it properly: specifications before code, decisions written down, and everything in the open.</p>
+
+    <h2>How it's made</h2>
+    <p>I'm building Seura with Claude, Anthropic's AI model. In design sessions, Claude drafts the specifications, designs, and this website, and I decide what Seura is and how it should behave. Claude Code writes most of the code. I review the work, test it on my own Windows PC and Mac, and correct it when it's wrong. The <a href="/devlog/">devlog</a> records who suggested and decided what, including the mistakes, and Claude writes most of those posts, which I review before they're published.</p>
+
+    <h2>Elsewhere</h2>
+    <ul>
+      <li><a href={PERSONAL_URL}>My personal site</a>, with my background and other projects</li>
+      <li><a href={LINKEDIN_URL}>LinkedIn</a>, where I post about AI-assisted development and this project</li>
+      <li><a href={GITHUB_URL}>Seura Photos on GitHub</a>, for the source and for reporting problems</li>
+    </ul>
+  </div>
+</Base>
+<style>
+  .intro { font-size: 1.15rem; }
+</style>
