@@ -23,7 +23,7 @@ const article = {
   url,
   mainEntityOfPage: url,
   image: new URL(`/og/devlog/${post.id}.png`, Astro.site).href,
-  author: { '@type': 'Person', name: 'Nevada Hamaker' },
+  author: { '@type': 'Person', name: 'Nevada Hamaker', url: 'https://seuraphotos.app/about/' },
   publisher: { '@type': 'Organization', name: 'Seura Photos', url: new URL('/', Astro.site).href },
   isPartOf: { '@type': 'Blog', name: 'Seura Photos devlog', url: new URL('/devlog/', Astro.site).href },
   license: 'https://creativecommons.org/licenses/by/4.0/',
