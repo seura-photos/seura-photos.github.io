@@ -63,6 +63,7 @@ const structured = [
         <span>Seura <span class="light">Photos</span></span>
       </a>
       <nav aria-label="Site">
+        <a href="/guide/" aria-current={path.startsWith('/guide') ? 'page' : undefined}>Guide</a>
         <a href="/devlog/" aria-current={path.startsWith('/devlog') ? 'page' : undefined}>Devlog</a>
         <a href={GITHUB_URL}>GitHub</a>
       </nav>

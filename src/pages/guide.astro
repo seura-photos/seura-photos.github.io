@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import { Content, getHeadings } from '../guide/guide.md';
+
+const sections = getHeadings().filter((h) => h.depth === 2);
+---
+<Base title="User guide" description="How to install and use Seura Photos: your library, editing, review, export, cloud-synced folders, and keyboard shortcuts." image="guide">
+  <div class="container prose guide">
+    <h1>User guide</h1>
+    <nav class="toc" aria-label="Contents">
+      <h2 class="toc-title">Contents</h2>
+      <ol>
+        {sections.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}
+      </ol>
+    </nav>
+    <Content />
+  </div>
+</Base>
+<style>
+  .toc { background: var(--panel); border-radius: 10px; padding: 1rem 1.25rem; margin: 1.5rem 0 2.5rem; }
+  .toc-title { font-size: 1rem; margin: 0 0 0.5rem; }
+  .toc ol { margin: 0; padding-left: 1.25rem; columns: 2; column-gap: 2rem; }
+  .toc li { break-inside: avoid; margin: 0 0 0.3rem; }
+  @media (max-width: 44rem) { .toc ol { columns: 1; } }
+  .guide :global(h2) { scroll-margin-top: 1rem; }
+  .guide :global(h3) { scroll-margin-top: 1rem; }
+</style>
