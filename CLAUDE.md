@@ -5,6 +5,7 @@ The public website for Seura Photos, at https://seuraphotos.app, built with Astr
 ## Who changes what
 
 - **Devlog posts** (`src/content/devlog/`, `public/images/devlog/`): Claude Code, alongside the app work.
+- **Update manifests** (`public/updates/latest.json` for releases, `public/updates/beta.json` for pre-release builds, SET-4 in the seura repository): Claude Code or the release workflow, changed only when Nevada publishes a release, as a pull request he merges.
 - **Everything else** (pages, layout, styles, SEO, social cards): Nevada's design sessions with Claude in the Claude app. Claude Code may fix a bug it finds there, but larger changes are discussed first.
 - Both push to this repository: pull before starting, keep changes small, and don't rewrite each other's work.
 
