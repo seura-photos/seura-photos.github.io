@@ -241,7 +241,7 @@ Seura shows photos with their true colors: it honors each photo's color profile,
 
 ## Keyboard shortcuts
 
-Ctrl on Windows is Cmd on a Mac. Single keys don't act while you're typing in a text box.
+Ctrl on Windows is Cmd on a Mac. Single keys don't act while you're typing in a text box. Rating and tagging aren't available in the Editor, which is for editing the photo itself; rate and tag in the Library, Viewer, or Review.
 
 | Action | Keys | Where |
 | --- | --- | --- |
