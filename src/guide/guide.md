@@ -78,7 +78,7 @@ Everything else Seura keeps is in the **Seura Photos** folder in your home folde
 - `settings.json`: your library folders and other settings, readable text.
 - `Presets`: one file for each preset you save.
 - `marks.json`: photos you've marked for deletion in a review.
-- `Cache`: thumbnails and previews, about 500 MB for every 10,000 photos. It's always safe to delete; Seura rebuilds it. To empty it, use **Clear** in Settings rather than deleting the folder: after a deletion by hand, the next launch reads every edit file in your library again, which in a cloud-synced folder downloads them (see [Cloud-synced folders](#cloud-synced-folders)).
+- `Seura Photos Cache`: thumbnails and the library's index, about 500 MB for every 10,000 photos. It's always safe to delete; Seura rebuilds it. If your library is in a cloud-synced folder, though, the next launch reads every edit file again, which downloads any that are only in the cloud (see [Cloud-synced folders](#cloud-synced-folders)). A **Clear** button in Settings, which keeps the index and so avoids that, is coming in the next build.
 - `Unreadable edit files`: old edit files set aside by Start over.
 
 Exports go only to the folders you choose. Seura sends nothing about you anywhere: it has no telemetry and no account.
@@ -196,7 +196,7 @@ Seura works with folders synced by OneDrive, Dropbox, iCloud Drive, and similar 
 
 ### What downloads a photo
 
-Adding a synced folder and browsing it never downloads anything: photos only in the cloud show their thumbnails, with a small cloud badge. A photo is downloaded, one at a time, only when you:
+Adding a synced folder and browsing it never downloads a photo: photos only in the cloud show their thumbnails, with a small cloud badge. A photo is downloaded, one at a time, only when you:
 
 - open it in the Viewer or Editor;
 - Enhance it, open it in another app, or export it;
@@ -204,11 +204,10 @@ Adding a synced folder and browsing it never downloads anything: photos only in 
 
 Rotating, rating, tagging, pasting edits, applying presets, and marking for deletion never download a photo. When a selection includes cloud photos, Enhance and Export say how many and how much will download before they start.
 
-Your tags, ratings, and edits are kept only in the small `.seura.json` file beside each photo, a few KB each, so Seura downloads those files when it needs to read them:
+Your tags, ratings, and edits are kept only in the small `.seura.json` file beside each photo, a few KB each, so Seura downloads that file whenever it needs to read it. Usually that's one photo's file, when you work with that photo: rating, tagging, rotating, or pasting edits onto it, copying its edits, or after it was edited on another device. Many download at once only:
 
 - when you add a folder: every edit file in it;
-- when Seura rebuilds an edited photo's thumbnail, after you clear the cache or when the thumbnail is missing: that photo's edit file only;
-- on the first launch after the `Cache` folder was deleted by hand: every edit file in your library. **Clear** in Settings doesn't cause this.
+- on the first launch after the `Seura Photos Cache` folder was deleted by hand: every edit file in your library.
 
 While a photo downloads, Seura shows its thumbnail with the size being downloaded. Move on whenever you like; the download may still finish in the background. If it fails, **Try again** appears.
 
