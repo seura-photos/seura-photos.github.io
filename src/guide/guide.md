@@ -202,13 +202,13 @@ Adding a synced folder and browsing it never downloads anything: photos only in 
 - Enhance it, open it in another app, or export it;
 - or, in a review, choose **Download as I go**.
 
-Rotating, rating, tagging, pasting edits, applying presets, and marking for deletion never download a photo.
+Rotating, rating, tagging, pasting edits, applying presets, and marking for deletion never download a photo. When a selection includes cloud photos, Enhance and Export say how many and how much will download before they start.
 
 Your tags, ratings, and edits are kept only in the small `.seura.json` file beside each photo, a few KB each, so Seura downloads those files when it needs to read them:
 
 - when you add a folder: every edit file in it;
 - when Seura rebuilds an edited photo's thumbnail, after you clear the cache or when the thumbnail is missing: that photo's edit file only;
-- on the first launch after the `Cache` folder was deleted by hand: every edit file in your library. **Clear** in Settings doesn't cause this. When a selection includes cloud photos, Enhance and Export say how many and how much will download before they start.
+- on the first launch after the `Cache` folder was deleted by hand: every edit file in your library. **Clear** in Settings doesn't cause this.
 
 While a photo downloads, Seura shows its thumbnail with the size being downloaded. Move on whenever you like; the download may still finish in the background. If it fails, **Try again** appears.
 
